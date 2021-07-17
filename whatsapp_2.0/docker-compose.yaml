@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  users_web:
+    build: ./whatsapp_2.0
+    #command: bash -c "cp serializers.py /usr/local/lib/python3.8/site-packages/djoser/serializers.py && python users/manage.py runserver 0.0.0.0:80"
+    command: bash -c "python whatsapp_2.0/manage.py runserver 0.0.0.0:80"
+    volumes:
+      - .:/code
+    ports:
+      - 80:80
+    restart: always
